@@ -76,7 +76,7 @@ from screening s
 inner join film f on s.film_id = f.id
 group by f.name
 having above_average_showtime > (select avg(s.id)
-							from screening s);
+				from screening s);
                             
 ##BELOW AVERAGE SHOW TIME
 select f.name, avg(s.id) as below_average_showtime
@@ -84,7 +84,7 @@ from screening s
 inner join film f on s.film_id = f.id
 group by f.name
 having below_average_showtime < (select avg(s.id)
-							from screening s);
+				from screening s);
 
 #10. Which room have the least number of seat?
 select room_id, count(id) as number_of_seat
