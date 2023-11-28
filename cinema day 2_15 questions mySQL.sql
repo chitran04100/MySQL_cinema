@@ -4,7 +4,7 @@ USE cinema;
 select name
 from film
 where name not in (select name
-					from film f
+		    from film f
                     join screening s on f.id = s.film_id);
                     
 #2. Who book more than 1 seat in 1 booking
