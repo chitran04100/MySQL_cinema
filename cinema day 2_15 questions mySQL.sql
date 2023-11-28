@@ -58,7 +58,10 @@ having room_total = (select max(room_total)
 					);
 
 #7. Show number of film that show in every day of week and order descending
-
+select date(start_time) as date, count(distinct film_id) as total_film
+from screening
+group by date
+order by total_film desc;
 
 #8. show total length of each film that showed in 28/5/2022
 select name, length_total
